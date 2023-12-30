@@ -1,0 +1,51 @@
+body{
+    background-color: #f5f5dc;
+    font-family: 'Trebuchet MS', 
+        'Lucida Sans Unicode', 
+        'Lucida Grande', 
+        'Lucida Sans', 
+        Arial, 
+        sans-serif;
+}
+
+h1{
+    text-align: center;
+    outline: solid black 2px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.navBar ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.navBar li {
+    display: inline;
+    outline: solid black 1px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 1px 0px 1px 0px
+}
+ul li:nth-child(2){
+    margin-left: 10px;
+}
+ul li:last-child {
+    margin-left: 10px;
+}
+
+.navBar ul li a{
+    text-decoration: none;
+    padding: 5px 15px;
+    color: #000000;
+    margin: 0;
+}
+
+.navBar ul li a:hover{
+    color: #efefc6;
+    background-color: #2f2f2f;
+}
