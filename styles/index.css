@@ -52,24 +52,24 @@ ul li:last-child {
 .columns {
     display: flex;
     justify-content: space-evenly;
-    
     columns: 2;
     border-radius: 10px;
     margin: 20px;
 }
+
 h3 {
     text-align: left;
 }
 
 .weatherBody {
-    outline: solid black 1px;
+    outline: solid black 2px;
     border-radius: 10px;
     padding: 0 20px 0 20px;
     margin: 4px 15px 10px 20px;
 }
 
 .closetBody {
-    outline: solid black 1px;
+    outline: solid black 2px;
     border-radius: 10px;
     padding: 0 20px 0 20px;
     margin: 4px 20px 10px 15px;
@@ -77,14 +77,24 @@ h3 {
 
 .weatherResults {
     margin-top: 3svh;
+    display: flex;
+    width: auto;
+}
+
+.flexForm {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flexForm div {
+    outline: solid black 1px;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
     
 }
-
-.weatherResults form {
-    position: relative;
-}
-
-.weatherResults  input {
-    width: 5svh;
+.weatherResults input {
     background-color: silver;
+    width: 11svh;
 }
