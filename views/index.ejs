@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/index.css">
+    <title>Virtual Closet</title>
+</head>
+<body>
+    <div>
+        <h1>Welcome to Virtual Closet</h1>
+    </div>
+    <nav>
+        <div class="navBar">
+            <ul>
+                <li id="homeBtn">
+                    <a href="./views/index.ejs">Home</a>
+                </li>
+                <li>
+                    <a href="./views/closet.ejs">Closet</a>
+                </li>
+                <li>
+                    <a href="./public/about.html">About</a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <div class="columns">
+        <div class="weatherBody">
+            <h3>Weather</h3>
+            <input type="search" id="weatherSearch">
+            <button id="goBtn">Go</button>
+            <div id="weatherResults" class="weatherResults">
+                <form class="flexForm">
+                    <div>
+                        <label for="curTemp">Temp:</label>
+                        <input type="text" id="curTemp">
+                    </div>
+
+                    <div>
+                        <label for="feelsLike">Feels:</label>
+                        <input type="text" id="feelsLike">
+                    </div>
+
+                    <div>
+                        <label for="wind">Wind:</label>
+                        <input type="text" id="wind">
+                    </div> 
+
+                    
+                    
+                </form>
+            </div>
+                <div>
+                    <label for="conditions">Conditions:</label>
+                    <p id="conditions"></p>
+                    <p>
+                        Paragraph explaining conditions:
+                        or maybe activity reccs
+                        or maybe places to go
+                        have user select thigns they
+                        enjoy doing and give reccsbased on
+                        those
+                    </p>
+                </div>
+        </div>
+        <div class="closetBody">
+            <div class="closetTitle">
+                <h3>Closet</h3>
+                <button id="addClosetBtn">Add to Closet</button>
+            </div>
+            
+            <div class="closetCols">
+                <div class="closetCol">
+                    <div class="colTitle">Hats</div>
+                    <div class="colItems">
+                        <ul>
+                            <li>Beanie</li>
+
+                        </ul>
+                    </div>
+                </div>
+                    
+                <div class="closetCol">
+                    <div class="colTitle">Jackets</div>
+                    <div class="colItems">
+                        <ul>
+                            <li>Rain Coat</li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="closetCol">
+                    <div class="colTitle">Shirts</div>
+                    <div class="colItems">
+                        <ul>
+                            <li>Long Sleeve</li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="closetCol">
+                    <div class="colTitle">Pants</div>
+                    <div class="colItems">
+                        <ul>
+                            <li>Jeans</li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="closetCol">
+                    <div class="colTitle">Shoes</div>
+                    <div class="colItems">
+                        <ul>
+                            <li>Boots</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="./scripts/index_scripts.js"></script>
+</body>
+</html>
