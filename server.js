@@ -5,6 +5,9 @@ const app = express()
 
 app.use(express.json())
 
+// allows form data to be processed!!
+app.use(express.urlencoded({extended: false}))
+
 app.use(express.static("public"))
 
 app.set('view engine', 'ejs')

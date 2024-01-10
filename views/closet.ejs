@@ -27,13 +27,25 @@
         </div>
     </nav>
 
-
     <div>
-        CCLOSET
+        this is the Closet
+    </div>
+    <div>
+        <% if (clothes && clothes.length > 0) { %>
+            <ul>
+                <% clothes.forEach(item => { %>
+                    <li><%= item.name%></li>
+                    <ul>
+                        <li><%= item.clothesType%></li>
+                        <li><%= item.weatherType%></li>
+                    </ul>
+                    
 
-        <a href="./addCloset.html">Go to add closet</a>
-
-        <a href="./delCloset.html">Go to delete closet</a>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>No items in closet</p>
+        <% } %>
     </div>
     
 </body>
