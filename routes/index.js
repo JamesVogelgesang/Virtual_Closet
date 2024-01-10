@@ -1,5 +1,3 @@
-// TO DO -fix button links
-
 const express = require('express')
 
 const router = express()
