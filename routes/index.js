@@ -1,9 +1,17 @@
 const express = require('express')
+const mongoose = require('mongoose')
+const Clothes = require('../models/clothesModel')
+const router = express.Router()
 
-const router = express()
-
-router.get('/', (req,res) => {
-    res.render('index')
+router.get('/', async(req,res) => {
+    try {
+        const clothes = await Clothes.find({})
+        res.render('index', {clothes})
+    } catch (error) {
+        res.status(500).json(clothes)
+    }
 })
+
+
 
 module.exports = router

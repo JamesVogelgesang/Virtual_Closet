@@ -52,3 +52,5 @@ const addBtn = document.getElementById('addClosetBtn')
 addBtn.addEventListener('click', ()=> {
     console.log('yahoooooo')
 })
+
+

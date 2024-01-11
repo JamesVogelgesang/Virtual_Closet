@@ -129,17 +129,16 @@ h3 {
 
 
 .colItems ul{
-    display: flex;
-    justify-content: center;
+    display: block;
     list-style-type: none;
     margin: 0;
     padding: 0; 
 }
 
 .colItems li {
-    list-style-type: none;
-    padding: 0;
+    padding: 0 10px 10px 0;
     text-align: center;
+    display: list-item;
 }
 
 .closetTitle{

@@ -75,10 +75,17 @@
             <div class="closetCols">
                 <div class="closetCol">
                     <div class="colTitle">Hats</div>
-                    <div class="colItems">
+                    <div class="colItems" id="Hat">
                         <ul>
-                            <li>Beanie</li>
-
+                            <% if (clothes && clothes.length > 0) { %>
+                                <% clothes.forEach(item => { %>
+                                    <% if (item.clothesType === 'Hat') { %>
+                                        <li><%= item.name %></li>
+                                    <% } %>
+                                <% }) %>
+                            <% } else { %>
+                                <li>No clothing to display </li>
+                            <% } %>
                         </ul>
                     </div>
                 </div>
@@ -87,8 +94,15 @@
                     <div class="colTitle">Jackets</div>
                     <div class="colItems">
                         <ul>
-                            <li>Rain Coat</li>
-
+                            <% if (clothes && clothes.length > 0) { %>
+                                <% clothes.forEach(item => { %>
+                                    <% if (item.clothesType === 'Jacket') { %>
+                                        <li><%= item.name %></li>
+                                    <% } %>
+                                <% }) %>
+                            <% } else { %>
+                                <li>No clothing to display </li>
+                            <% } %>
                         </ul>
                     </div>
                 </div>
@@ -97,7 +111,15 @@
                     <div class="colTitle">Shirts</div>
                     <div class="colItems">
                         <ul>
-                            <li>Long Sleeve</li>
+                            <% if (clothes && clothes.length > 0) { %>
+                                <% clothes.forEach(item => { %>
+                                    <% if (item.clothesType === 'Shirt') { %>
+                                        <li><%= item.name %></li>
+                                    <% } %>
+                                <% }) %>
+                            <% } else { %>
+                                <li>No clothing to display </li>
+                            <% } %>
 
                         </ul>
                     </div>
@@ -107,8 +129,15 @@
                     <div class="colTitle">Pants</div>
                     <div class="colItems">
                         <ul>
-                            <li>Jeans</li>
-
+                            <% if (clothes && clothes.length > 0) { %>
+                                <% clothes.forEach(item => { %>
+                                    <% if (item.clothesType === 'Pants') { %>
+                                        <li><%= item.name %></li>
+                                    <% } %>
+                                <% }) %>
+                            <% } else { %>
+                                <li>No clothing to display </li>
+                            <% } %>
                         </ul>
                     </div>
                 </div>
@@ -117,8 +146,15 @@
                     <div class="colTitle">Shoes</div>
                     <div class="colItems">
                         <ul>
-                            <li>Boots</li>
-
+                            <% if (clothes && clothes.length > 0) { %>
+                                <% clothes.forEach(item => { %>
+                                    <% if (item.clothesType === 'Shoe') { %>
+                                        <li><%= item.name %></li> 
+                                    <% } %>
+                                <% }) %>
+                            <% } else { %>
+                                <li>No clothing to display </li>
+                            <% } %>
                         </ul>
                     </div>
                 </div>
