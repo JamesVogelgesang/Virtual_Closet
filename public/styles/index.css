@@ -133,10 +133,11 @@ h3 {
     list-style-type: none;
     margin: 0;
     padding: 0; 
+    position: fixed;
 }
 
 .colItems li {
-    padding: 0 10px 10px 0;
+    padding: 0 0 10px 0;
     text-align: center;
     display: list-item;
 }

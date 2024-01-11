@@ -12,11 +12,14 @@ app.use(express.static("public"))
 
 app.set('view engine', 'ejs')
 
-app.get('/', (req,res) => {
-    res.render('index')
+app.get('/', async(req,res) => {
+    try {
+        const clothes = await Clothes.find({})
+        res.render('index', { clothes })
+    } catch (error) {
+        res.status(500).json({message: error.message})
+    }
 })
-
-
 
 const closetRouter = require('./routes/closet')
 const mainRouter = require('./routes/index')
