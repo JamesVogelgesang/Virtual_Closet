@@ -6,13 +6,11 @@ const feelsInp = document.getElementById('feelsLike');
 const windInp = document.getElementById('wind');
 const condState = document.getElementById('conditions');
 
-// Required parts of url to call api
-
 const baseURL = "http://api.weatherapi.com/v1"
 const key = "710cec0720844542804140755230212"
 const forecastExt = "current.json"
 
-
+// calls api
 async function getWeather() {
     const searchBar = document.getElementById('weatherSearch');
     
@@ -42,10 +40,25 @@ async function getWeather() {
 
         const cond = data.current.condition.text
         condState.textContent = cond
+
     }
 }
 
 goBtn.addEventListener('click', getWeather)
+
+function changeCloset (){
+    if (condState.textContent.length === 0){
+        alert("Look up a location's weather to see what you should wear!")
+    } else {
+        if (condState.textContent.includes("rain")){
+            console.log("RAINRAINRAIN")
+        }
+    }
+}
+
+changeClosetBtn.addEventListener("click", changeCloset)
+
+
 
 const addBtn = document.getElementById('addClosetBtn')
 
