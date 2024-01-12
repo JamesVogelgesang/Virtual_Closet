@@ -23,7 +23,9 @@ app.get('/', async(req,res) => {
 
 const closetRouter = require('./routes/closet')
 const mainRouter = require('./routes/index')
+const weatherRouter = require('./routes/weather')
 
+app.use('/weather', weatherRouter)
 app.use('/closet', closetRouter)
 app.use('/index', mainRouter)
 

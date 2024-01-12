@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const Clothes = require('../models/clothesModel')
 const router = express.Router()
 
+
 router.get('/', async(req,res) => {
     try {
         const clothes = await Clothes.find({})

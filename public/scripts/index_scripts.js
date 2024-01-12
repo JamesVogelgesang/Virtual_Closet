@@ -1,62 +1,52 @@
-
+// const { query } = require("express");
 const goBtn = document.getElementById('goBtn');
-
 const tempInp = document.getElementById('curTemp');
 const feelsInp = document.getElementById('feelsLike');
 const windInp = document.getElementById('wind');
 const condState = document.getElementById('conditions');
+const searchBar = document.getElementById('weatherSearch');
 
-const baseURL = "http://api.weatherapi.com/v1"
-const key = "710cec0720844542804140755230212"
-const forecastExt = "current.json"
-
-// calls api
-async function getWeather() {
-    const searchBar = document.getElementById('weatherSearch');
-    
+async function populateWeatherForm (){
     if (!searchBar.value){
         alert("Enter a location to search")
         
     } else {    
-        const endpointURL = new URL(`http://api.weatherapi.com/v1/${ forecastExt }?key=${ key }&q=${ searchBar.value }`);
+        try {
+            const response = await fetch(`/weather?location=${ searchBar.value }`)
+            const weatherData = await response.json()
 
-        const response = await fetch(endpointURL);
-
-        if (response.status === 404 || response.status === 400){
-            alert("Unknown Location")
-        }
-
-        const data = await response.json();
-        // console.log(data)
-
-        const tempf = data.current.temp_f
-        tempInp.value = `${ tempf } F`
-
-        const feels = data.current.feelslike_f
-        feelsInp.value = `${ feels } F`
+            const tempf = weatherData.current.temp_f
+            tempInp.value = `${ tempf } F`
         
-        const wind = data.current.wind_mph
-        windInp.value = `${ wind } mph`
-
-        const cond = data.current.condition.text
-        condState.textContent = cond
-
-    }
-}
-
-goBtn.addEventListener('click', getWeather)
-
-function changeCloset (){
-    if (condState.textContent.length === 0){
-        alert("Look up a location's weather to see what you should wear!")
-    } else {
-        if (condState.textContent.includes("rain")){
-            console.log("RAINRAINRAIN")
+            const feels = weatherData.current.feelslike_f
+            feelsInp.value = `${ feels } F`
+            
+            const wind = weatherData.current.wind_mph
+            windInp.value = `${ wind } mph`
+        
+            const cond = weatherData.current.condition.text
+            condState.textContent = cond
+        } catch (error) {
+            console.log("Error retrieving weather data")
         }
     }
 }
 
-changeClosetBtn.addEventListener("click", changeCloset)
+
+
+goBtn.addEventListener('click', populateWeatherForm)
+
+// function changeCloset (){
+//     if (condState.textContent.length === 0){
+//         alert("Look up a location's weather to see what you should wear!")
+//     } else {
+//         if (condState.textContent.includes("rain")){
+//             console.log("RAINRAINRAIN")
+//         }
+//     }
+// }
+
+// changeClosetBtn.addEventListener("click", changeCloset)
 
 
 
