@@ -13,7 +13,7 @@ const clothesSchema = mongoose.Schema(
         },
         weatherType: {
             type: [String],
-            enum: ['Snow', 'Rain', 'Cold', 'Hot', 'Moderate', 'Sunny'],
+            enum: ['Snow', 'Rain', 'Cold', 'Hot', 'Moderate', 'Sunny', 'Overcast'],
             required: [true, "Choose 1 or more types of weather to wear your specified clothes in!"]
         }
     }

@@ -14,7 +14,6 @@ router.get('/', async(req, res) => {
         res.render('closet', { clothes })
         // res.status(200).json(clothes)
     } catch (error) {
-        console.log(error.message)
         res.status(500).json({message: error.message})
     }
 })

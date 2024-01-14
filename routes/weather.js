@@ -23,4 +23,23 @@ router.get('/', async(req,res) => {
     }
 })
 
+// TO DO: figure out how to update html -> this filters the clothes, but doesn't update ejs
+router.get('/type', async(req,res) => {
+    const condition = req.query.condition
+
+    try {
+        // need to specify conditions once sorted
+        console.log(condition)
+        if (condition){
+            const clothes = await Clothes.find({ weatherType: condition })
+            console.log(clothes)
+            res.render('index', { clothes: clothes })
+            // res.json(clothes)
+        }
+        
+    } catch (error) {
+        res.status(500).json({message: error.message})
+    }
+})
+
 module.exports = router
